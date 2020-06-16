@@ -1,0 +1,6 @@
+export const CART_ADD = 'CART_ADD';
+export const CART_DELETE = 'CART_DELETE';
+
+export const CART_SAVE_SHIPPING = 'CART_SAVE_SHIPPING';
+
+export const CART_SAVE_PAYMENT = "CART_SAVE_PAYMENT";

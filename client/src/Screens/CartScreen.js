@@ -36,7 +36,7 @@ export default function CartScreen ( props ) {
                 <div className="cart-list">
                     <ul className="cart-list-container">
                         <li >
-                            <h3>Shopping Cart</h3>
+                            <h3>Shopping Cart Items</h3>
                             <div>
                                  Price
                             </div>

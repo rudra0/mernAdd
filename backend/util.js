@@ -15,7 +15,9 @@ const getToken = (user) =>{
 
 const isAuth = ( req, res, next ) =>{
 
-    const token = req.header.authorization;
+    const token = req.headers.authorization;
+    
+    
     if(token)
     {
         const onlyToken = token.slice( 7, token.length );
@@ -25,8 +27,8 @@ const isAuth = ( req, res, next ) =>{
                 return res.status(401).send({ msg: 'Invalid Token' })
             }
             req.user = decode;
-            next();
-            return
+            
+            return next();
         } );
     }
     else{

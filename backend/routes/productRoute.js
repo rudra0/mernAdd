@@ -28,12 +28,13 @@ router.get("/:id", async(req, res)=>{
    
 })
 
-router.delete("/:id", isAuth, isAdmin, async( req, res)=>{
+router.delete("/:id",isAuth, isAdmin, async( req, res)=>{
     const deletedProduct = await Product.findById(req.params.id)
     if(deletedProduct)
     {
         await deletedProduct.remove()
         res.send({ message: "Product Deleted"});
+        return
     }
     res.send("Error In Deleting Product")
 })

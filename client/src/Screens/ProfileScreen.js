@@ -45,7 +45,7 @@ function ProfileScreen(props) {
       <div className="form">
         <form onSubmit={submitHandler} >
           <ul className="form-container">
-            <li>
+            <li style={{marginBottom:2}}>
               <h2>User Profile</h2>
             </li>
             <li>
@@ -56,20 +56,20 @@ function ProfileScreen(props) {
             <li>
               <label htmlFor="name">
                 Name
-          </label>
-              <input value={name} type="name" name="name" id="name" onChange={(e) => setName(e.target.value)}>
+           </label>
+              <input className="input" value={name} type="text" name="name" id="name" onChange={(e) => setName(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="email">
                 Email
-          </label>
-              <input value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
+            </label>
+              <input className="input" value={email} type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}>
               </input>
             </li>
             <li>
               <label htmlFor="password">Password</label>
-              <input value={password} type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
+              <input value={password} className="input" type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
               </input>
             </li>
 
@@ -77,14 +77,14 @@ function ProfileScreen(props) {
               <button type="submit" className="button primary">Update</button>
             </li>
             <li>
-              <button type="button" onClick={handleLogout} className="button secondary full-width">Logout</button>
+              <button type="button"  onClick={handleLogout} className="button primary full-width">Logout</button>
             </li>
 
           </ul>
         </form>
       </div>
     </div>
-    <div className="profile-orders content-margined">
+    <div className="profile-orders content-margined" >
       {
         loadingOrders ? <div>Loading...</div> :
           errorOrders ? <div>{errorOrders} </div> :
@@ -93,7 +93,7 @@ function ProfileScreen(props) {
                 <tr>
                   <th>ID</th>
                   <th>DATE</th>
-                  <th>TOTAL</th>
+                  <th>TOTAL PRICE</th>
                   <th>PAID</th>
                   <th>ACTIONS</th>
                 </tr>
@@ -105,7 +105,7 @@ function ProfileScreen(props) {
                   <td>{order.totalPrice}</td>
                   <td>{order.isPaid}</td>
                   <td>
-                    <Link to={"/order/" + order._id}>DETAILS</Link>
+                    <Link to={"/order/" + order._id} style={{textAlign:"center"}}>DETAILS</Link>
                   </td>
                 </tr>)}
               </tbody>

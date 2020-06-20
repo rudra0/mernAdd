@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom'
 import Steps from '../Component/steps';
+import { createOrder } from '../actions/orderActions';
 
 
 export default function PlaceOrderScreen ( props ) {
 
     const cart = useSelector(state=>state.cart);
+    
+
+    const orderCreate = useSelector(state=>state.orderCreate);
+    
+
+    const { loading, success, error, order } = orderCreate;
+
+    console.log(orderCreate)
 
     const {cartItems, shipping, payment} = cart; 
 
+    const dispatch = useDispatch();
     const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
     const shippingPrice = itemsPrice > 100 ? 0 : 10;
     const taxPrice = 0.15 * itemsPrice;
@@ -27,20 +37,25 @@ export default function PlaceOrderScreen ( props ) {
 
     function placeOrderHandler()
     {
-        props.history.push("/order")
+        dispatch(createOrder({
+            orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice, taxPrice, totalPrice
+        }))
     }
+
+    useEffect(()=>
+    {
+        if(success)
+        {
+            alert("Yay Your Order Has Been Placed...")
+            props.history.push("/order/"+ order._id);
+        }
+    },[success])
 
     function backToHome(){
         alert('Your Order Is Cancelled !!')
     }
     
-    
 
-  
-
-    
-
-   
    
         return (
             <div>

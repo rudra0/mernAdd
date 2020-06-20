@@ -46,10 +46,6 @@ const saveProduct = (product) => async(dispatch, getState) =>{
             dispatch({type: PRODUCT_SAVE_SUCCESS, payload: data });
         
         }
-            
-        
-
-        
 
 
     }

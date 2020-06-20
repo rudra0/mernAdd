@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { saveProduct, listProduct, deleteProduct } from '../actions/productActions';
+import { Link } from 'react-router-dom';
 
 
 const ProductsScreen = (props)=>{
@@ -68,8 +69,8 @@ const ProductsScreen = (props)=>{
         <div className="content content-margined">
             <div className="product-header">
                 <h2>Products</h2>
-                
                 <button className="button" onClick={()=>openModal({})}>Create Product</button>
+                <Link to="/orders"><button className="button" >Total Orders</button></Link>
             </div>
             {modalVisible && 
                  <div className="form">

@@ -1,11 +1,11 @@
 var path = require("path")
 var express =require("express");
-var data = require('../backend/data.js');
 var config =require('../backend/config');
 var dotenv = require('dotenv');
 var mongoose = require('mongoose') ;
 var router = require("./routes/userRoute");
 var productRoute = require("./routes/productRoute")
+var orderRoute = require("./routes/orderRoute")
 
 var bodyParser =require('body-parser');
 
@@ -52,6 +52,8 @@ app.use(bodyParser.json());
 app.use("/api/users", router);
 
 app.use("/api/products", productRoute);
+
+app.use("/api/orders", orderRoute);
 
 
 // app.get("/api/product/:id",(req, res)=>{

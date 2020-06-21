@@ -56,7 +56,8 @@ router.post("/register", async (req, res) =>{
     ({
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            contact: req.body.contact
         });
         const newUser = await user.save(); 
         if(newUser)
@@ -66,6 +67,7 @@ router.post("/register", async (req, res) =>{
                 name: newUser.name,
                 email: newUser.email,
                 isAdmin: newUser.isAdmin,
+                contact: newUser.contact,
                 token: getToken(newUser)
 
             })

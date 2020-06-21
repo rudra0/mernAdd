@@ -28,6 +28,7 @@ function OrderScreen(props) {
 
   const orderDetails = useSelector(state => state.orderDetails);
   const { loading, order, error } = orderDetails;
+  
 
   return loading ? <div>Loading ...</div> : error ? <div>{error}</div> :
 
@@ -41,10 +42,12 @@ function OrderScreen(props) {
           <h3>Shipping Address</h3>
             <div>
               {order.shipping.address}, {order.shipping.city},
-          {order.shipping.postalCode}, {order.shipping.country},
+          {order.shipping.postalCode}, {order.shipping.country}
+          <br></br>
+          <h2>Contact Number: {order.shipping.contact}</h2>
           </div>
             <div>
-              {order.isDelivered ? "Delivered at " + order.deliveredAt : "Not Delivered."}
+              {order.isDelivered ? "Delivered at " + order.deliveredAt : "Not Delivered Yet."}
             </div>
           </div>
           <div>

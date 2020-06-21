@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 const shippingSchema = {
+  contact: {type: Number},
   address: { type: String },
   city: { type: String },
   postalCode: { type: String },

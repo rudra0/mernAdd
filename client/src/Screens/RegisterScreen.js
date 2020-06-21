@@ -33,12 +33,12 @@ const RegisterScreen = (props)=>{
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const [repassword, setrePassword] = useState('')
-    
+    const [contact, setNumber] = useState('');
 
     const submitHandler =(e)=>{
         
             e.preventDefault();
-            dispatch(register( name, email, password ));
+            dispatch(register( name, email, password, contact ));
             
         
         
@@ -75,6 +75,14 @@ const RegisterScreen = (props)=>{
                     </li>
 
                     <li>
+                        <label htmlFor="mobileNumber">
+                            Mobile Number
+                        </label>
+                        <input type="Number" name="number" id="number"  onChange={(e)=>setNumber(e.target.value)} className="input">
+                        </input>
+                    </li>
+
+                    <li>
                         <label htmlFor="password">
                             Password
                         </label>
@@ -84,14 +92,14 @@ const RegisterScreen = (props)=>{
 
                     <li>
                         <label htmlFor="repassword">
-                            repassword
+                            Confirm Password
                         </label>
                         <input type="password" name="repassword" id="repassword" onChange={(e)=>setrePassword(e.target.value)} className="input">
                         </input>
                     </li>
 
                     <li>
-                        <button type="submit" className="button primary"> Sign In</button>
+                        <button type="submit" className="button primary"> Register </button>
                     </li>
 
                     <li>
@@ -100,7 +108,7 @@ const RegisterScreen = (props)=>{
 
                     <li>
                     <Link to={ redirect ==="/" ? "signin" : "register?signin=" + redirect } className="button secondary">
-                            Create Your Koob Account
+                            Click To Sign In
                         </Link>
                     </li>
                      

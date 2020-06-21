@@ -10,7 +10,7 @@ const ShippingScreen = (props)=>{
     const dispatch = useDispatch();
     
 
-   
+    const [contact, setNumber] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
     const [country, setCountry] = useState('')
@@ -20,7 +20,7 @@ const ShippingScreen = (props)=>{
     const submitHandler =(e)=>{
         
             e.preventDefault();
-            dispatch(saveShipping( {address, city, country, postal} ));
+            dispatch(saveShipping( {contact, address, city, country, postal } ));
             props.history.push("payment")
             
         
@@ -37,6 +37,14 @@ const ShippingScreen = (props)=>{
                 <ul className="form-container">
                     <li>
                         <h2 style={{textAlign:"center", marginBottom:0}}>Shipping</h2>
+                    </li>
+
+                    <li>
+                        <label htmlFor="mobileNumber">
+                            Mobile Number
+                        </label>
+                        <input type="Number" name="number" id="number"  onChange={(e)=>setNumber(e.target.value)} className="input">
+                        </input>
                     </li>
 
                     <li>
@@ -70,6 +78,8 @@ const ShippingScreen = (props)=>{
                         <input type="text" name="postal" id="postal"  onChange={(e)=>setPostal(e.target.value)} className="input">
                         </input>
                     </li>
+
+                    
 
                     <li>
                         <button type="submit" className="button primary"> Continue </button>

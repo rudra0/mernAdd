@@ -12,7 +12,7 @@ const ProductScreen = (props)=>{
     const { products, loading, error } = productDetail;
     
     
-    console.log(products)
+   
     useEffect(() => {
         dispatch(detailProduct(props.match.params.id));
         return () => {
@@ -44,7 +44,7 @@ const ProductScreen = (props)=>{
                         </li>
                         <li>
                             
-                           <b>Price: ${products.price}</b> 
+                           <b>Price: ₹{products.price}</b> 
                         </li>
                         <li>
                             Description:
@@ -57,7 +57,7 @@ const ProductScreen = (props)=>{
                 <div className="details-action">
                     <ul>
                         <li>
-                            <b>Price: ${products.price}</b>
+                            <b>Price: ₹{products.price}</b>
                         </li>
                         <li>
                             <div> Status: {products.countInStock>0 ? <div> In Stock </div>: <div style={{color:"red"}}>Out Of Stock..</div> }</div>

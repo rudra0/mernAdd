@@ -86,7 +86,7 @@ export default function CartScreen ( props ) {
 
                                 
                                     <div className="cart-price">
-                                       ${item.price}
+                                         ₹{item.price}
                                      </div>
                                 </li>
                                  )
@@ -103,7 +103,7 @@ export default function CartScreen ( props ) {
                     <h3>
                         Subtotal(Items { cartItems.reduce( (a, c)  => a + Number(c.qty), 0) })
                         :
-                        ${ cartItems.reduce( ( a, c )=> a + c.price*c.qty, 0 ) }
+                        ₹{ cartItems.reduce( ( a, c )=> a + c.price*c.qty, 0 ) }
                     
                         </h3>
                     <button className="button primary" disabled={ cartItems.length === 0} onClick={ checkoutHandler }>

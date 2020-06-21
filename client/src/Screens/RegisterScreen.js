@@ -13,7 +13,7 @@ const RegisterScreen = (props)=>{
 
     const { loading, userInfo, error } = userRegister
 
-    console.log(userInfo)
+   
     
 
     useEffect(() => {

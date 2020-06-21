@@ -12,7 +12,7 @@ function ProfileScreen(props) {
 
   const userSignin = useSelector(state => state.userSignIn);
   const { userInfo } = userSignin;
-  console.log(userInfo)
+  
   const handleLogout = async() => {
     
     await props.history.push("/signin");

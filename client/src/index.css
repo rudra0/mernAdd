@@ -96,6 +96,7 @@ a:hover{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background-color: rgba(206, 206, 240, 0.822);
 }
 
 .products li{
@@ -110,6 +111,7 @@ a:hover{
 .product{
   display: flex;
   justify-content: space-between;
+  background-color: rgba(206, 206, 240, 0.822);
   flex-direction: column;
   height: 100%;
 }
@@ -122,11 +124,11 @@ a:hover{
 @media only screen and (max-width: 600px) {
   .product-image{
     max-width: 100%;
-    max-height: 100%;
+    max-height: 10;
   }
 }
 
-.max
+
 
 .product-name{
   font-size: 2rem;
@@ -163,12 +165,24 @@ a:hover{
 .sidebar{
   
   position: fixed;
+  justify-content: space-between;
   transition: all .5s;
   transform: translateX(-30rem);
   width: 30rem;
-  background-color: #f0f0f0;
+  font-size: 2rem;
+  background-color: rgba(13, 13, 14, 0.822);
   height: 100%;
 }
+.sidebar > ul >li{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  
+}
+
 .sidebar.open{
   transform: translateX(0);
 
@@ -195,11 +209,15 @@ a:hover{
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  background-color: rgba(206, 206, 240, 0.822);
   padding: 1rem;
 }
 
 .details-image{
   flex: 2 1 60rem;
+}
+.routePath{
+  background-color: rgba(206, 206, 240, 0.822);
 }
 
 @media only screen and (max-width: 600px) {
@@ -207,6 +225,7 @@ a:hover{
     width: 20rem;
     max-height: 100%;
     widows: 100%;
+    
     
   }
 }

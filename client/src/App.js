@@ -63,15 +63,26 @@ function App() {
 
             <aside className="sidebar">
                 <button className="sidebar-close-button" onClick={closeMenu}>x</button>
-                <h3>Shopping Cart</h3>
+                <h3 style={{color:"white", textAlign:"center"}}>Shopping Cart</h3>
                 <ul>
                   
                     <li>
-                        <a href="pants.html">Pants</a>
+                        <a style={{color:"white"}} href="pants.html">Pants</a>
                     </li>
                     <li>
-                        <a href="shirts.html">Shirts</a>
+                        <a style={{color:"white"}} href="shirts.html">Shirts</a>
                     </li>
+                    <li>
+                        <a style={{color:"white"}} href="shoes.html">Shoes</a>
+                    </li>
+                    <li>
+                        <a style={{color:"white"}} href=".html">Jacket</a>
+                    </li>
+                    <li>
+                        <a style={{color:"white"}} href="shirts.html">Hats</a>
+                    </li>
+                    
+
                 </ul>
             </aside>
             

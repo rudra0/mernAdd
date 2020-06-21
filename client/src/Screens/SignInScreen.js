@@ -13,7 +13,8 @@ const SignInScreen = (props)=>{
     const { loading, userInfo, error } = userSignIn
 
     const redirect = props.location.search ? props.location.search.split("=")[1] : "/";
-    console.log(userInfo)
+    
+    
     
 
     useEffect(() => {

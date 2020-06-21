@@ -79,7 +79,7 @@ const deleteProduct = (productId) => async(dispatch, getState)=>{
                 Authorization: 'Bearer ' + userInfo.token 
         }
         });
-        console.log(productId)
+       
         dispatch({ type: PRODUCT_DELETE_SUCCESS, payload: data, success: true });
     }
     catch(err)

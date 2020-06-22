@@ -96,7 +96,7 @@ a:hover{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgba(206, 206, 240, 0.822);
+ 
 }
 
 .products li{
@@ -111,7 +111,7 @@ a:hover{
 .product{
   display: flex;
   justify-content: space-between;
-  background-color: rgba(206, 206, 240, 0.822);
+  
   flex-direction: column;
   height: 100%;
 }
@@ -209,16 +209,14 @@ a:hover{
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  background-color: rgba(206, 206, 240, 0.822);
+  
   padding: 1rem;
 }
 
 .details-image{
   flex: 2 1 60rem;
 }
-.routePath{
-  background-color: rgba(206, 206, 240, 0.822);
-}
+
 
 @media only screen and (max-width: 600px) {
   .detail-image img{
@@ -411,7 +409,7 @@ a:hover{
   max-width: 100%;
 }
 
-/* Add Product Section */
+/* Add Product Section */ 
 
 .content{
   max-width: 100%;

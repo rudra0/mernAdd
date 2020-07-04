@@ -117,6 +117,7 @@ const paymnentId = (Id, order) => async (dispatch, getState) =>
       payload: data
         }) 
     }
+    
     catch{
       console.log("error")
     }

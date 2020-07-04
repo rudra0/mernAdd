@@ -14,8 +14,8 @@ const { inflateRaw } = require("zlib");
 
 
 const razorpay = new Razorpay({
-    key_id : 'rzp_test_VHWqslZ0KtAnIS',
-    key_secret : 'i7kX3Jl7177wTbDTS6GJtrvg',
+    key_id : process.env.key_id || 'rzp_test_VHWqslZ0KtAnIS',
+    key_secret : process.env.key_secret ||'i7kX3Jl7177wTbDTS6GJtrvg',
 
 });
 

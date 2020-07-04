@@ -48,6 +48,7 @@ export default function PlaceOrderScreen ( props ) {
         {
             alert("Yay Your Order Has Been Placed...")
             props.history.push("/order/"+ order._id);
+            // props.history.push("/pay");
         }
     },[success])
 

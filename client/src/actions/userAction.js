@@ -14,7 +14,7 @@ const signin = ( email, password ) => async(dispatch) => {
         dispatch({ 
             type: USER_SIGNIN_SUCCESS, payload: data ,
              });
-            
+            console.log(data)
             Cookies.set('userInfo', JSON.stringify(data))
     }
     catch(error){
@@ -59,6 +59,7 @@ const update = ({ userId, name, email, password }) => async (dispatch, getState)
           Authorization: 'Bearer ' + userInfo.token
         }
       });
+      
       dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
       Cookies.set('userInfo', JSON.stringify(data));
     } catch (error) {

@@ -1,4 +1,5 @@
 import {
+    PAYMENT_ID,
     ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_CREATE_FAIL,
     ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL,
     ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS, ORDER_PAY_FAIL,
@@ -67,23 +68,23 @@ import {
     }
   }
   
-  // function orderPayReducer(state = {
-  //   order: {
-  //     orderItems: [],
-  //     shipping: {},
-  //     payment: {}
-  //   }
-  // }, action) {
-  //   switch (action.type) {
-  //     case ORDER_PAY_REQUEST:
-  //       return { loading: true };
-  //     case ORDER_PAY_SUCCESS:
-  //       return { loading: false, success: true };
-  //     case ORDER_PAY_FAIL:
-  //       return { loading: false, error: action.payload };
-  //     default: return state;
-  //   }
-  // }
+  function orderPayReducer(state = {
+    order: {
+      orderItems: [],
+      shipping: {},
+      payment: {}
+    }
+  }, action) {
+    switch (action.type) {
+      case ORDER_PAY_REQUEST:
+        return { loading: true };
+      case ORDER_PAY_SUCCESS:
+        return { loading: false, success: true };
+      case ORDER_PAY_FAIL:
+        return { loading: false, error: action.payload };
+      default: return state;
+    }
+  }
   
   function orderDeleteReducer(state = {
     order: {
@@ -102,7 +103,20 @@ import {
       default: return state;
     }
   }
+
+  function paymentId(state = {orderId:{}},action)
+  {
+    
+    switch(action.type)
+    {
+      case PAYMENT_ID:
+        return { orderId: action.payload}
+      default:
+        return state
+    }
+  }
   export {
     orderCreateReducer, orderDetailsReducer,
-     myOrderListReducer, orderListReducer, orderDeleteReducer
+     myOrderListReducer, orderListReducer, orderDeleteReducer,
+     orderPayReducer, paymentId
   }

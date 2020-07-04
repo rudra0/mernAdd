@@ -15,6 +15,7 @@ import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 import OrderScreen from './Screens/OrderScreen';
 import OrdersScreen from './Screens/OrdersScreen';
 import ProfileScreen from './Screens/ProfileScreen';
+import PayScreen from './Screens/PayScreen';
 
 
 function App() {
@@ -100,6 +101,7 @@ function App() {
                   <Route path = '/cart/:id?' component = { CartScreen } />
                   <Route path = '/product/:id' component= { ProductScreen } />
                   <Route path='/' exact= {true} component= { HomeScreen } />
+                  <Route path='/pay' exact= {true} component= { PayScreen } />
                     
                 </div> 
             </main>

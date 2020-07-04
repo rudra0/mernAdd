@@ -39,11 +39,20 @@ const PaymentScreen = (props)=>{
 
                     <li>
                         <div>
-                            <input type="radio" name="payment" id="payment" value="paypal"  
+                            <input type="radio" name="payment" id="payment" value="Cash On Delivery"  
+                            onChange={(e)=>setPaymentMethod(e.target.value)} className="input">
+                             </input>
+                             
+                            <label htmlFor="payment">
+                                Cash On Delivery
+                            </label>
+                            <br/>
+                            <br/>
+                            <input type="radio" name="payment" id="payment" value="Online"  
                             onChange={(e)=>setPaymentMethod(e.target.value)} className="input">
                              </input>
                             <label htmlFor="payment">
-                                PayPal
+                                Online Payment
                             </label>
                         </div>
                         

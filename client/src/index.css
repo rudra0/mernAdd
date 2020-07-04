@@ -96,7 +96,7 @@ a:hover{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
- 
+  
 }
 
 .products li{
@@ -111,7 +111,7 @@ a:hover{
 .product{
   display: flex;
   justify-content: space-between;
-  
+ 
   flex-direction: column;
   height: 100%;
 }
@@ -119,12 +119,16 @@ a:hover{
 .product-image{
   max-width: 34rem;
   max-height: 34rem;
+     
+  border-radius: 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {
   .product-image{
     max-width: 100%;
     max-height: 10;
+       
+    border-radius: 0.5rem;
   }
 }
 
@@ -209,12 +213,14 @@ a:hover{
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  
+ 
   padding: 1rem;
 }
 
 .details-image{
   flex: 2 1 60rem;
+     
+  border-radius: 0.5rem;
 }
 
 

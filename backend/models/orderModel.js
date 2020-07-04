@@ -8,7 +8,8 @@ const shippingSchema = {
 };
 
 const paymentSchema = {
-  paymentMethod: { type: String }
+  paymentMethod: { type: String },
+  orderID: {type: String},
 };
 
 const orderItemSchema = new mongoose.Schema({

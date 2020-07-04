@@ -47,18 +47,17 @@ router.post("/", isAuth, async (req, res) => {
   res.status(201).send({ message: "New Order Created", data: newOrderCreated });
 });
 
-router.put("/:id/pay", isAuth, async (req, res) => {
+router.put("/:id/pay", async (req, res) => {
   const order = await Order.findById(req.params.id);
+  console.log(req.body)
   if (order) {
+    
     order.isPaid = true;
     order.paidAt = Date.now();
     order.payment = {
-      paymentMethod: 'paypal',
-      paymentResult: {
-        payerID: req.body.payerID,
-        orderID: req.body.orderID,
-        paymentID: req.body.paymentID
-      }
+      paymentMethod: 'Online Mode',
+      orderID: req.body.id
+      
     }
     const updatedOrder = await order.save();
     res.send({ message: 'Order Paid.', order: updatedOrder });

@@ -8,7 +8,6 @@ const router = express.Router();
 router.put('/:id', isAuth, async (req, res) => {
 
     const userId = req.params.id;
-    console.log(userId)
     const user = await User.findById(userId);
     if (user) {
       user.name = req.body.name || user.name;

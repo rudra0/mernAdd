@@ -3,28 +3,36 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createOrder, detailsOrder, payOrder } from '../actions/orderActions';
+import PaymentGateway from '../Component/paymentGateway';
 function OrderScreen(props) {
 
-//   const orderPay = useSelector(state => state.orderPay);
-//   const { loading: loadingPay, success: successPay, error: errorPay } = orderPay;
+  const orderPay = useSelector(state => state.orderPay);
+  const { loading: loadingPay, success: successPay, error: errorPay } = orderPay;
 
+  const { orderId } = useSelector(state => state.orderIds)
+
+  
     
   const dispatch = useDispatch();
   useEffect(() => {
      {
       dispatch(detailsOrder(props.match.params.id));
+      dispatch(payOrder(order,orderId))
+      
     }
     
   }, []);
+
+  
 
  function homeHandler()
   {
       props.history.push("/")
   }
 
-//   const handleSuccessPayment = (paymentResult) => {
-//     dispatch(payOrder(order, paymentResult));
-//   }
+  
+
+  
 
   const orderDetails = useSelector(state => state.orderDetails);
   const { loading, order, error } = orderDetails;
@@ -104,14 +112,15 @@ function OrderScreen(props) {
         </div>
         <div className="placeorder-action">
           <ul>
-            {/* <li className="placeorder-actions-payment">
+            <li className="placeorder-actions-payment">
               {loadingPay && <div>Finishing Payment...</div>}
               {!order.isPaid &&
-                <PaypalButton
-                  amount={order.totalPrice}
-                  onSuccess={handleSuccessPayment} />
+                <PaymentGateway
+                  amount = {order.totalPrice}
+                  orders = {order}
+                   />
               }
-            </li> */}
+            </li>
             <li>
               <h3>Order Summary</h3>
             </li>

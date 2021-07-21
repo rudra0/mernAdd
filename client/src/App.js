@@ -41,7 +41,7 @@ function App() {
                     <button onClick={openMenu}>
                         &#9776;
                     </button>
-                    <Link to='/'>JS Glass Warehouse..</Link>
+                    <Link to='/'>JS Glass </Link>
                     
                 </div>
                 <div className="header-links">
